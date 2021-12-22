@@ -29,4 +29,4 @@ When I encounter a problem and I try to troubleshoot it, the first thing that I 
 read the error that the terminal dropped, then I start looking at my logic, trying to figure out when and
 why did it crash, and make the changes I feel necessary. I repeat this process until I succeed or I give up
 and use the debugger.
-Something I can do to improve the process is use the debugger more often, and not only as a last resource.
+Something I can do to improve the process is use the debugger more often, and not only as a last resource
