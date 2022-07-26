@@ -1,8 +1,10 @@
 """
 Author: Efrain Gomez Fajardo
-Purpose: Calculate and display someone's fitness after they input basic information
+Purpose: Calculate and display someone's fitness after they 
+input basic information
 """
 from datetime import datetime
+
 
 def main():
     """
@@ -19,12 +21,15 @@ def main():
     height = cm_from_in(height)
     display_results(birthday, weight, height, gender)
 
+
 def display_results(birthday, weight, height, gender):
     print(f'Age (years): {compute_age(birthday)}')
     print(f'Weight (kg): {weight:.1f}')
     print(f'Height (cm): {height:.1f}')
     print(f'Body Mass Index: {body_mass_index(weight, height):.1f}')
-    print(f'Basal metabolical rate (kcal/day): {basal_metabolic_rate(gender, weight, height, compute_age(birthday)):.0f}') 
+    print('Basal metabolical rate (kcal/day):',
+        basal_metabolic_rate(gender, weight, height, 
+        compute_age(birthday)))
 
 
 def compute_age(birth):
@@ -46,6 +51,7 @@ def compute_age(birth):
 
     return years
 
+
 def kg_from_lb(lb):
     """Convert a mass in pounds to kilograms.
     Parameter lb: a mass in US pounds.
@@ -54,6 +60,7 @@ def kg_from_lb(lb):
     kg = lb * 0.45359237
     return kg
 
+
 def cm_from_in(inch):
     """Convert a length in inches to centimeters.
     Parameter inch: a length in inches.
@@ -61,6 +68,7 @@ def cm_from_in(inch):
     """
     cm = inch * 2.54
     return cm
+
 
 def body_mass_index(weight, height):
     """Calculate and return a person's body mass index (bmi).
@@ -71,6 +79,7 @@ def body_mass_index(weight, height):
     """
     bmi = 10000 * weight / height ** 2
     return bmi
+
 
 def basal_metabolic_rate(gender, weight, height, age):
     """Calculate and return a person's basal metabolic rate (bmr).
@@ -85,5 +94,6 @@ def basal_metabolic_rate(gender, weight, height, age):
     elif gender.lower() == 'm':
         bmr = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age
     return bmr
+
 
 main()

@@ -3,9 +3,10 @@ from math import pi
 def main():
     radius = get_radius()
     height = get_height()
-    # for i in radius:
-    #     efficency = compute_volume(float(i), float(j)) / compute_surface_area(float(i), float(j))
-    #     print(f'{efficency:.1f}')
+    for i in radius:
+        efficiency = compute_volume(float(i), float(j)) \
+        / compute_surface_area(float(i), float(j))
+        print(f'{efficiency:.1f}')
 
 def compute_volume(radius, height):
     return pi * (radius * radius) * height
