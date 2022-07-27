@@ -7,6 +7,7 @@ Extra Mile:
 """
 from random import choice
 
+
 def get_determiner(quantity):
     """Return a randomly chosen determiner. A determiner is
     a word like "the", "a", "one", "two", "some", "many".
@@ -29,6 +30,7 @@ def get_determiner(quantity):
     # Randomly choose and return a determiner.
     word = choice(words)
     return word
+
 
 def get_noun(quantity):
     """Return a randomly chosen noun.
@@ -56,18 +58,19 @@ def get_noun(quantity):
     word = choice(words)
     return word
 
+
 def get_adverb():
     """Return a randomly chosen adverb
     from this list of adverbs:
     "gladly", "gently", "quietly", "safely", "truthfully", "warmly", 
-    "wildly", "carefully", "wisely", "hard", "fast", "straight", "well", 
+    "wildly", "carefully", "wisely", "hard", "fast", "straight", "well",
     "angrily", "boldly", "daringly"
     
     Return: A randomly chosen adverb
     """
-    adverbs = ["gladly", "gently", "quietly", "safely", "truthfully", "warmly", 
-    "wildly", "carefully", "wisely", "hard", "fast", "straight", "well", 
-    "angrily", "boldly", "daringly"]
+    adverbs = ["gladly", "gently", "quietly", "safely", "truthfully",
+    "warmly", "wildly", "carefully", "wisely", "hard", "fast", "straight",
+    "well", "angrily", "boldly", "daringly"]
     adverb = choice(adverbs)
     return adverb
 
@@ -115,6 +118,7 @@ def get_verb(quantity, tense):
     verb = choice(verbs)
     return verb
 
+
 def get_preposition():
     """Return a randomly chosen preposition
     from this list of prepositions:
@@ -136,6 +140,7 @@ def get_preposition():
     preposition = choice(prepositions)
     return preposition
 
+
 def get_prepositional_phrase(quantity):
     """Build and return a prepositional phrase composed of three
     words: a preposition, a determiner, and a noun by calling the
@@ -144,30 +149,40 @@ def get_prepositional_phrase(quantity):
     Parameter
         quantity: an integer that determines if the determiner
             and noun in the prepositional phrase returned from
-            this function are singular or pluaral.
+            this function are singular or plural.
     Return: a prepositional phrase.
     """
     if quantity == 1:
-        prepositional_phrase = f'{get_preposition()} {get_determiner(1)} {get_noun(1)}'
+        prepositional_phrase = f"{get_preposition()}" \
+                             + f" {get_determiner(1)}" \
+                             + f" {get_noun(1)}"
     else:
-        prepositional_phrase = f'{get_preposition()} {get_determiner(2)} {get_noun(2)}'
+        prepositional_phrase = f'{get_preposition()}' \
+                             + f' {get_determiner(2)}' \
+                             + f' {get_noun(2)}'
 
     return prepositional_phrase
-    
+
 
 def main():
     for i in range(2):
         # Past Tense
-          print(f"{get_determiner(i).capitalize()} {get_noun(i)} {get_adverb()} {get_verb(i, 'past')} {get_prepositional_phrase(i)}.")
+        print(f"{get_determiner(i).capitalize()} {get_noun(i)}",
+            + f" {get_adverb()} {get_verb(i, 'past')}",
+            + f"{get_prepositional_phrase(i)}.")
 
     for i in range(2):
         # Present Tense
-        print(f"{get_determiner(i).capitalize()} {get_noun(i)} {get_adverb()} {get_verb(i, 'present')} {get_prepositional_phrase(i)}.")
+        print(f"{get_determiner(i).capitalize()} {get_noun(i)}",
+            + f" {get_adverb()} {get_verb(i, 'present')}",
+            + f"{get_prepositional_phrase(i)}.")
 
     for i in range(2):
         # Future Tense
-        print(f"{get_determiner(i).capitalize()} {get_noun(i)} {get_adverb()} {get_verb(i, 'future')} {get_prepositional_phrase(i)}.")
-    
+        print(f"{get_determiner(i).capitalize()} {get_noun(i)}",
+            + f" {get_adverb()} {get_verb(i, 'future')}",
+            + f"{get_prepositional_phrase(i)}.")
+
 # If this file is executed like this:
 # > python program.py
 # then call the main function. However, if this file is simply

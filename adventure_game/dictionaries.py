@@ -27,9 +27,9 @@ def get_decisions():
     'attack' : ("The wolf just stares at you as you unfold your sword and pierce his heart. The light inside his eyes vanishes as you remove the sword from his chest\n",
                 "Aiming straight to his head, the wolf still doesn't move, he's just staring at you. You shoot and the wolf is no more.\n"),
     'pet' : "He starts to move his tails, he's very excited to meet you.\nThe wolf now joins in your adventure!\n", 
-    'run' : "You were able to escape from the wolf, but apperantly he wasn't a bad wolf anyways.\n",
+    'run' : "You were able to escape from the wolf, but apparently he wasn't a bad wolf anyways.\n",
     'fight_wolf' : ("You take the first step to start attacking, but suddenly, the wolf dashes towards the ogre. The ogre is too slow, so the wolf manages to avoid his attacks and jumps straight to his face.\nThe ogre, in his final attempt to free himself, slaps his face, leaving  flat as a paper.\nYou will always remember his courage, and you will always be friends.\n",
-                "As you approach with the wolf, you notice that he's not breathing. Apperantly he waited for so long that he ran out of food and died from starvation\n"),
+                "As you approach with the wolf, you notice that he's not breathing. Apparently he waited for so long that he ran out of food and died from starvation\n"),
     'fight' : ("After dodging his attacks, you strike his knee, allowing you to impulse to his chest. You pierce his heart, after which he only screams and then faints.\n",
                 "Finding a high place, you take your bow and aim straight to one of his eyes. You take a deep breath, and then you shoot.\nDirect hit! The ogre faints.\n"),
     'flee' : ("You managed to escape, but only to turn around and see that the wolf is dead.\n",
@@ -40,7 +40,7 @@ def get_decisions():
 
 def get_endings():
     endings = {
-    'true': "You succesfully conquered your fears by befriending the wolf and by fighting the ogre.\nCongratulations!",
+    'true': "You successfully conquered your fears by befriending the wolf and by fighting the ogre.\nCongratulations!",
     'sad': "You conquered some of your fears by befriending the wolf, but you ran on your final test, and the wolf died. I'm truly sorry for your loss.",
     'incomplete': "Oh poor wolf! He was just looking for a friend. You still conquered the ogre, but you missed a great opportunity to make a new friend.",
     'bad': "Your quest is over, but what did you earn? You have no experience because of your actions. You return home as if you never left.",

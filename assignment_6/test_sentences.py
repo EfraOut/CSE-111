@@ -1,17 +1,16 @@
 """
 Author: Efrain GOmez Fajardo
 Teacher: Comeau, Luc
-Purpose: Test functuons from sentences.py
+Purpose: Test functions from sentences.py
 Extra Mile:
-1. Addes test_get_adverb to test the get_adverb function
+1. Added test_get_adverb to test the get_adverb function
 """
-from sentences import get_determiner, get_noun, get_preposition, get_prepositional_phrase, get_verb, get_adverb
+from sentences import *
 import pytest
 
 
 def test_get_determiner():
     # 1. Test the single determiners.
-
     single_determiners = ["a", "one", "the"]
 
     # This loop will repeat the statements inside it 4 times.
@@ -26,7 +25,6 @@ def test_get_determiner():
         assert word in single_determiners
 
     # 2. Test the plural determiners.
-
     plural_determiners = ["two", "some", "many", "the"]
 
     # This loop will repeat the statements inside it 4 times.
@@ -36,6 +34,7 @@ def test_get_determiner():
         # Verify that the word returned from get_determiner
         # is one of the words in the plural_determiners list.
         assert word in plural_determiners
+
 
 def test_get_noun():
     # 1. Test singles nouns
@@ -56,15 +55,17 @@ def test_get_noun():
 
         assert noun in plural_nouns
 
+
 def test_get_adverb():
-    adverbs = ["gladly", "gently", "quietly", "safely", "truthfully", "warmly", 
-    "wildly", "carefully", "wisely", "hard", "fast", "straight", "well", 
-    "angrily", "boldly" "daringly"]
+    adverbs = ["gladly", "gently", "quietly", "safely", "truthfully",
+        "warmly", "wildly", "carefully", "wisely", "hard", "fast", "straight",
+        "well", "angrily", "boldly" "daringly"]
 
     for _ in range(4):
         adverb = get_adverb()
 
     assert adverb in adverbs
+
 
 def test_get_verb():
     # 1. Test past verbs
@@ -84,7 +85,7 @@ def test_get_verb():
         verb = get_verb(1, 'present')
 
         assert verb in singles_verbs
-        
+
     # 3. Test present and plural
     plural_verbs = ["drink", "eat", "grow", "laugh", "think",
         "run", "sleep", "talk", "walk", "write"]
@@ -103,6 +104,7 @@ def test_get_verb():
         verb = get_verb(1, 'future')
 
         assert verb in future_verbs
+
 
 def test_get_prepositional():
     # 1. Since there are no parameters, so only one test is necessary
@@ -123,7 +125,7 @@ def test_get_prepositional_phrase():
     # 1.Singles
     for _ in range(4):
         preposition = get_prepositional_phrase(1)
-    
+
     # Since the returned value should a sentence with 3 words
     # There should be two empty strings to separate the words
     assert preposition.count(' ') == 2
@@ -131,9 +133,10 @@ def test_get_prepositional_phrase():
     # 2. Plurals
     for _ in range(4):
         preposition =  get_prepositional_phrase(2)
-        
+
     # Since the returned value should a sentence with 3 words
     # There should be two empty strings to separate the words
     assert preposition.count(' ') == 2
+
 
 pytest.main(["-v", "--tb=line", "-rN", __file__])
