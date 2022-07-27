@@ -12,4 +12,5 @@ age = int(input('Please enter your age: '))
 max_rate = 220 - age
 slowest = (max_rate / 100) * 65
 fastest = (max_rate / 100) * 85
-print(f'When exercising to strengthen your heart,\nyou should keep your heart rate between {slowest:.0f} and {fastest:.0f} beats per minute')
+print(f'When exercising to strengthen your heart,\nyou should keep',
+f'your heart rate between {slowest:.0f} and {fastest:.0f} beats per minute')

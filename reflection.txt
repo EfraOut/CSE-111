@@ -11,13 +11,13 @@ functions.
 
 The first time I was introduced to functions during this class, I was able to see how
 it made the projects made in CSE 110 easier. Being able to see that, by using parameters,
-you can reuse the same coding, allowing programs to be shorter and faster, was facinating.
+you can reuse the same coding, allowing programs to be shorter and faster, was fascinating.
 A good experience I had with that was when I recreated a program made in CSE 110, but with functions.
 That's when I saw the power of functions
 
 2. In your judgment, what is the value of test functions?
 
-For me, it will be the ability to keep the programmer in track and consceous of where their working.
+For me, it will be the ability to keep the programmer in track and conscious of where their working.
 Test functions allow the programmer to think, consider how to make a good function, and then applying it
 by testing their logic. Without test functions, programmer can easily be lost with all the functions they
 have to write.

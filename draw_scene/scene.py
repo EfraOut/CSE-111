@@ -1,10 +1,13 @@
 """
 Author: Efrain Gomez Fajardo
 TeacherL Comeau, Luc
-Purpose: Getting use to creating and calling function by drawing an image using tkinter
+Purpose: Getting use to creating and calling function
+by drawing an image using tkinter
 Extra Mile:
-1. Using random to select between two different images (Morning or night)
-2. Using random to generate fixed amount of clouds and trees in random locations
+1. Using random to select between two different images
+(Morning or night)
+2. Using random to generate fixed amount of clouds and
+trees in random locations
 """
 
 import tkinter as tk
@@ -34,7 +37,8 @@ def main():
     root.mainloop()
 
 
-def draw_scene(canvas, scene_left, scene_top, scene_right,scene_bottom):
+def draw_scene(canvas, scene_left, scene_top,
+                 scene_right, scene_bottom):
     """Draw a scene in the canvas. scene_left, scene_top,
     scene_right, and scene_bottom contain the extent in
     pixels of the region where the scene should be drawn.
@@ -51,41 +55,75 @@ def draw_scene(canvas, scene_left, scene_top, scene_right,scene_bottom):
     scene_width = scene_right - scene_left + 1
     scene_height = scene_bottom - scene_top + 1
     """
+
+    # Uncomment below for debugging:
+    # draw_grid(canvas, scene_left, scene_top, scene_right, scene_bottom, 50)
+
+    # Variables used to describe the position of the objects to draw.
     width = scene_right - scene_left + 1
     height = scene_bottom - scene_top + 1
     image_picker = randint(0, 1)
-    if image_picker == 0:
-        draw_sky(canvas, width - width, height - height, width , height / 2, 'light blue')
-        draw_sun(canvas, scene_left + 10, scene_left + 10, scene_left + 100, scene_left + 100, 'yellow2', 'light blue')
+
+    # Random selection of morning or night scene.
+    if image_picker == 0: # Morning.
+
+        # Constant elements for the picture.
+        draw_sky(canvas, width - width, height - height, width,
+                height / 2, 'light blue')
+        draw_sun(canvas, scene_left + 10, scene_left + 10,
+                scene_left + 100, scene_left + 100, 'yellow2', 'light blue')
+        draw_ground(canvas, width - width, height / 2, width, height,
+                    'green3')
+
+        # Drawing clouds in random places and random shapes. 
         for _ in range(5):
-            draw_cloud(canvas, randint(0, width), randint(0, height / 2), randint(0, width), randint(0, height / 2), 'white', 'white')
-        draw_ground(canvas, width - width, height / 2, width, height, 'green3')
-        for _ in range(20):
             tree_height = 150
-            tree_center = scene_left + randint(scene_left + 50, scene_right - 50)
-            tree_top = scene_top + randint(height / 2 - tree_height, height - tree_height)
+            tree_center = scene_left + randint(scene_left + 50,
+                          scene_right - 50)
+            tree_top = scene_top + randint(height / 2 - tree_height,
+                       height - tree_height)
+            draw_cloud(canvas, randint(0, width), randint(0, height / 2),
+                    randint(0, width), randint(0, height / 2),
+                    'white', 'white')
+        
+        # Drawing trees in random places.
+        for _ in range(20):
             draw_pine_tree(canvas, tree_center, tree_top, tree_height)
+    
+    # Night scene
     else:
-        draw_sky(canvas, width - width, height - height, width, height, 'midnight blue')
-        draw_sun(canvas, scene_left + 10, scene_left + 10, scene_left + 100, scene_left + 100, 'grey50', 'midnight blue')
+
+        # Constant elements for the picture.
+        draw_sky(canvas, width - width, height - height, width,
+                height, 'midnight blue')
+        draw_sun(canvas, scene_left + 10, scene_left + 10, scene_left + 100,
+                scene_left + 100, 'grey50', 'midnight blue')
+        draw_ground(canvas, width - width, height / 2, width, height,
+                    'chartreuse4')
+
+        # Drawing clouds in random places and random shapes. 
         for _ in range(5):
-            draw_cloud(canvas, randint(0, width), randint(0, height / 2), randint(0, width), randint(0, height / 2), 'white', 'white')
-        draw_ground(canvas, width - width, height / 2, width, height, 'chartreuse4')
+            draw_cloud(canvas, randint(0, width), randint(0, height / 2),
+                    randint(0, width), randint(0, height / 2),
+                    'white', 'white')
+
+        # Drawing trees in random places.
         for _ in range(20):
             tree_height = 150
-            tree_center = scene_left + randint(scene_left + 50, scene_right - 50)
-            tree_top = scene_top + randint(height / 2 - tree_height, height - tree_height)
+            tree_center = scene_left + randint(scene_left + 50,
+                          scene_right - 50)
+            tree_top = scene_top + randint(height / 2 - tree_height,
+                       height - tree_height)
             draw_pine_tree(canvas, tree_center, tree_top, tree_height)
 
-    # draw_grid(canvas, scene_left, scene_top, scene_right, scene_bottom, 50)
 
-def draw_grid(canvas, left, top, right, botton, grid_spacing):
+def draw_grid(canvas, left, top, right, bottom, grid_spacing):
     """
     Draw a grid useful for reference
     Parameters:
         canvas: 
             Required for drawing
-        left, top, right, botton:
+        left, top, right, bottom:
             The places where the lines will be drawn
         grid_spacing:
             The spacing in pixels between the lines
@@ -96,13 +134,14 @@ def draw_grid(canvas, left, top, right, botton, grid_spacing):
     text_vertical_margin = 10
 
     #Draw horizontal lines
-    for i in range(top, botton, grid_spacing):
+    for i in range(top, bottom, grid_spacing):
         canvas.create_line(left, i, right, i)
-        canvas.create_text(left + text_horizontal_margin, i + text_vertical_margin, text=f'{i}')
+        canvas.create_text(left + text_horizontal_margin, 
+                        i + text_vertical_margin, text=f'{i}')
 
     # Draw vertical lines
     for i in range(left, right, grid_spacing):
-        canvas.create_line(i, top, i, botton)
+        canvas.create_line(i, top, i, bottom)
         canvas.create_text(i, top + text_vertical_margin, text=f'{i}')
 
 def draw_pine_tree(canvas, peak_x, peak_y, height):
