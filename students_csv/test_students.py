@@ -11,7 +11,7 @@ def test_read_dict():
     I_NUMBER = 0
 
     # Call the read_dict function which will read the students.csv
-    # file and create and return a dictinoary.
+    # file and create and return a dictionary.
     filename = path.join(path.dirname(__file__), "students.csv")
     students = read_dict(filename, I_NUMBER)
 

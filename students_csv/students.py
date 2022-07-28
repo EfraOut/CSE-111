@@ -1,5 +1,9 @@
 import csv
 
+I_NUMBER = 0
+STUDENT_NAME = 1
+
+
 def read_dict(filename, key_column_index):
     dictionary = {}
     with open(filename, 'rt') as csv_file:
@@ -12,12 +16,11 @@ def read_dict(filename, key_column_index):
 
 
 def main():
-    I_NUMBER = 0
-    STUDENT_NAME = 1
     students = read_dict('students.csv', I_NUMBER)
     student = input('Please enter an I-Number: ')
     student = student.replace('-', '')
-    # Cheking if the input has more or less digits that it should
+
+    # Checking if the input has more or less digits that it should
     if len(student) < 9:
         print('Invalid I-Number: too few digits')
     elif len(student) > 9:

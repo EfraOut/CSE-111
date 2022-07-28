@@ -1,6 +1,11 @@
 # vehicles.py
 # Copyright 2020, Brigham Young University - Idaho. All rights reserved.
 
+MANUFACTURER_INDEX = 1
+MODEL_INDEX = 2
+COLOR_INDEX = 3
+
+
 def main():
     # Create a dictionary that contains data about six vehicles.
     # The key for each vehicle in the dictionary is the vehicle's
@@ -17,10 +22,6 @@ def main():
         "2T3BF4DV9QR146782": [2012, "Toyota", "RAV 4", "green", "I4", 2.5]
     }
 
-    MANUFACTURER_INDEX = 1
-    MODEL_INDEX = 2
-    COLOR_INDEX = 3
-
     # Ask the user for a vehicle identification number (VIN).
     vin = input("Please enter a VIN: ")
 
@@ -36,7 +37,7 @@ def main():
         model = data[MODEL_INDEX]
         color = data[COLOR_INDEX]
 
-        print(f'{manufacturer} {model} {color}')
+        print(manufacturer, model, color)
 
     else:
         # Print a message stating that the VIN entered

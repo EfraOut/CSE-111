@@ -1,11 +1,11 @@
 import csv
 
-
 # Each row in the pupils.csv file contains three elements.
 # These are the indexes of the elements in each row.
 GIVEN_NAME_INDEX = 0
 SURNAME_INDEX = 1
 BIRTHDATE_INDEX = 2
+
 
 def main():
     student_list = read_compound_list('pupils.csv')
@@ -50,4 +50,6 @@ def read_compound_list(filename):
 def print_lists(pupils):
     for pupil in pupils:
         print(pupil)
+
+
 main()
