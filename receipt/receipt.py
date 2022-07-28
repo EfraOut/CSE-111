@@ -5,11 +5,12 @@ Purpose: Calculate shopping cart
 by loading from other files
 Extra Mile:
 1. Added dollar signs on the output
-2. Added special character surronding the 'thank you' message
+2. Added special character surrounding the 'thank you' message
 3. Added a try, except block catching an IndexError
 """
 import csv
 from datetime import datetime
+
 
 def read_products(filename):
     """

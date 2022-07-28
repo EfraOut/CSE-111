@@ -78,7 +78,7 @@ def create_woods(weapon):
 def create_battle(weapon, wolf):
     """
     Third and last scene from the game
-    The player has to choose between figting or
+    The player has to choose between fighting or
     fleeing from an ogre
         parameters:
             weapon: The chosen weapon from
@@ -120,12 +120,12 @@ def create_battle(weapon, wolf):
 
 def print_ending(ending):
     """
-    Final conversation with the turtle who anounces
+    Final conversation with the turtle who announces
     the reached ending.
-        parameters:
-            ending: The corresponding ending from
-            create_battle() 
-        returns: nothing
+    parameters:
+        ending: The corresponding ending from
+        create_battle() 
+    returns: nothing
     """
     print(stories['turtle'][SWORD_INDEX])
     print(stories['turtle'][BOW_INDEX])

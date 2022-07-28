@@ -8,19 +8,19 @@ print("statements that you could possibly apply to yourself.")
 print("Please rate how much you agree with each of the")
 print("statements by responding with one of these four letters:")
 print()
-print('Measure thingys')
-print()
+
 
 def print_questions():
     """
     Displays and asks the users the questions from the
-    Rosenberg Self-Esteem questioneer
+    Rosenberg Self-Esteem questioner
     
     Parameters:
 
     return: 
     """
-    questions = ["I feel that I am a person of worth, at least on an equal plane with others",
+    questions = ["I feel that I am a person of worth,"
+        + " at least on an equal plane with others",
         "I feel that I have a number of good qualities",
         "All in all, I am inclined to feel that I am a failure",
         "I am able to do things as well as most other people",
@@ -38,17 +38,18 @@ def print_questions():
         answer = input('Enter A, a, D or d: ')
         answers.append(answer)
     compute_total(answers)
-    
+
+
 def compute_total(answer):
     """
     Computes the points based on the answers on
-    the Rosenberg questioneer.
+    the Rosenberg questioner.
 
     Parameters:
         answers - Takes the answers from the print_questions
         function
 
-    return: The total score from the questioneer.
+    return: The total score from the questioner.
     """
     points = 0
 
@@ -72,14 +73,14 @@ def compute_total(answer):
             elif answer[i] == 'A':
                 points += 0
     return points
-    
-            
+
+     
 def main():
-    print_questions()
     score = print_questions()
     print()
     print(f'Your total score is: {score}')
     print('A score less than 15 means that you need to love yourself more')
+
 
 if __name__ == '__main__':
     main()

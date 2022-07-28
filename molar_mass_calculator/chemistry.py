@@ -6,6 +6,12 @@ Extra Mile:
 1. Added get_known_molecules function with a dictionary
 and print out if the formula is in that dictionary
 """
+# These are the indexes of the
+# elements in the periodic table.
+NAME_INDEX = 0
+ATOMIC_MASS_INDEX = 1
+
+
 class FormulaError(ValueError):
     """FormulaError is the type of error that
     parse_formula will raise if a formula is invalid.
@@ -102,10 +108,6 @@ def parse_formula(formula, periodic_table_dict):
     elem_dict, _ = parse_r(formula, 0, 0)
     return list(elem_dict.items())
 
-# These are the indexes of the
-# elements in the periodic table.
-NAME_INDEX = 0
-ATOMIC_MASS_INDEX = 1
 
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     """Compute and return the total molar mass of all the
@@ -153,6 +155,7 @@ def get_formula_name(formula, known_molecules_dict):
         return known_molecules_dict[formula]
     else:
         return 'Unknown compound'
+
 
 def make_periodic_table():
     periodic_table_dict = {
@@ -277,7 +280,8 @@ def make_periodic_table():
     }
     return periodic_table_dict
 
-def get_knwown_molecules():
+
+def get_known_molecules():
     known_molecules_dict = {
         "Al2O3": "aluminum oxide",
         "CH3OH": "methanol",
@@ -298,20 +302,24 @@ def get_knwown_molecules():
     }
     return known_molecules_dict
 
+
 def main():
     print('Welcome to Molar Mass Calculator!\n')
     formula = input('Please enter formula: ')
-    print(get_formula_name(formula, get_knwown_molecules()))
+    print(get_formula_name(formula, get_known_molecules()))
     mass = float(input('Enter mass of the chemical sample (in grams): '))
     periodic_table = make_periodic_table()
+
     # Call the parse_formula function to convert the
     # chemical formula given by the user to a compound
     # list that stores element symbols and the quantity
     # of atoms of each element in the molecule.
     compound_list = parse_formula(formula, periodic_table)
+
     # Call the compute_molar_mass function to compute the
     # molar mass of the molecule from the compound list.
     molar_mass = compute_molar_mass(compound_list, periodic_table)
+
     # Compute the number of moles in the sample.
     number_of_moles = mass / molar_mass
     print('Here is the information:')

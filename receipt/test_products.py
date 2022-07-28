@@ -4,7 +4,7 @@ import pytest
 
 
 def test_read_products():
-    """Verify that the read_producdts function works correctly.
+    """Verify that the read_products function works correctly.
     Parameters: none
     Return: nothing
     """

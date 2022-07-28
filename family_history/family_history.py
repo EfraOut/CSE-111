@@ -107,7 +107,6 @@ def print_death_age(people_dict):
         print(f'{name} {age_at_death}')
         
 
-
 def count_genders(people_dict):
     """Count and print the number of males
     and females in the people dictionary.
@@ -133,7 +132,6 @@ def count_genders(people_dict):
     print(f'Number of females: {females}')
     
 
-
 def print_marriages(marriages_dict, people_dict):
     """For each marriage in the marriages dictionary, print
     the husband's name, his age at wedding, the wedding year,
@@ -152,16 +150,19 @@ def print_marriages(marriages_dict, people_dict):
         value = marriage[1]
         wedding_year = value[WEDDING_YEAR_INDEX]
 
-        # Get the key from marriages_dict to be used for the people_dict dictionary
+        # Get the key from marriages_dict to be used for the
+        # people_dict dictionary
         HUSBAND_KEY = value[HUSBAND_KEY_INDEX]
         WIFE_KEY = value[WIFE_KEY_INDEX]
 
         # Get the information by searching in both dictionaries
         husband_name = people_dict[HUSBAND_KEY][NAME_INDEX]
-        husband_age = wedding_year - people_dict[HUSBAND_KEY][BIRTH_YEAR_INDEX]
+        husband_age = wedding_year - people_dict[HUSBAND_KEY] \
+        [BIRTH_YEAR_INDEX]
         wife_name = people_dict[WIFE_KEY][NAME_INDEX]
         wife_age = wedding_year - people_dict[WIFE_KEY][BIRTH_YEAR_INDEX]
-        print(f'{husband_name} {husband_age} > {wedding_year} < {wife_name} {wife_age}')
+        print(husband_name, husband_age, ">", wedding_year, "<",
+        wife_name, wife_age)
 
 
 # If this file was executed like this:
