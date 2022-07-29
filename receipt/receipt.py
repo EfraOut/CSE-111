@@ -37,10 +37,10 @@ def read_products(filename):
                 name = row[NAME_INDEX]
                 price = float(row[PRICE_INDEX])
                 products[key] = name, price
-                
-        # Return the dictionary     
+
+        # Return the dictionary
         return products
-        
+
     except (FileNotFoundError, PermissionError) as e:
         print(e)
         print('Please select a valid file')
@@ -54,7 +54,7 @@ def read_request():
     its content
         returns: a list with tuples [(product_index, quantity)]
     """
-    #Useful indexes for the request.csv fie
+    # Useful indexes for the request.csv file
     PRODUCT_INDEX = 0
     QUANTITY = 1
     request = []
@@ -71,7 +71,7 @@ def read_request():
         return request
     except (FileNotFoundError, PermissionError) as e:
         print(e)
-        print('Please select a valid file') 
+        print('Please select a valid file')
 
 
 def compute_receipt():
@@ -108,7 +108,7 @@ def compute_receipt():
 
     except (FileNotFoundError, PermissionError) as e:
         print(e)
-        print('Please select a valid file') 
+        print('Please select a valid file')
     except KeyError as key_err:
         print(key_err)
 
@@ -130,7 +130,7 @@ def print_receipt():
         items = compute_receipt()
 
         # Create new variables from each
-        # element in the tuple       
+        # element in the tuple
         quantity = items[QUANTITY_INDEX]
         subtotal = items[SUBTOTAL_INDEX]
         tax = items[TAX_INDEX]

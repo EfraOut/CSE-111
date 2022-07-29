@@ -39,7 +39,7 @@ def test_get_determiner():
 def test_get_noun():
     # 1. Test singles nouns
     single_nouns = ["bird", "boy", "car", "cat", "child",
-        "dog", "girl", "man", "rabbit", "woman"]
+                    "dog", "girl", "man", "rabbit", "woman"]
 
     for _ in range(4):
         noun = get_noun(1)
@@ -48,7 +48,7 @@ def test_get_noun():
 
     # 2. Test plural nouns
     plural_nouns = ["birds", "boys", "cars", "cats", "children",
-        "dogs", "girls", "men", "rabbits", "women"]
+                    "dogs", "girls", "men", "rabbits", "women"]
 
     for _ in range(4):
         noun = get_noun(2)
@@ -58,8 +58,8 @@ def test_get_noun():
 
 def test_get_adverb():
     adverbs = ["gladly", "gently", "quietly", "safely", "truthfully",
-        "warmly", "wildly", "carefully", "wisely", "hard", "fast", "straight",
-        "well", "angrily", "boldly" "daringly"]
+               "warmly", "wildly", "carefully", "wisely", "hard", "fast",
+               "straight", "well", "angrily", "boldly" "daringly"]
 
     for _ in range(4):
         adverb = get_adverb()
@@ -70,7 +70,7 @@ def test_get_adverb():
 def test_get_verb():
     # 1. Test past verbs
     verbs_past = ["drank", "ate", "grew", "laughed", "thought",
-        "ran", "slept", "talked", "walked", "wrote"]
+                  "ran", "slept", "talked", "walked", "wrote"]
 
     for _ in range(4):
         verb = get_verb(1, 'past')
@@ -79,7 +79,7 @@ def test_get_verb():
 
     # 2. Test present and singles
     singles_verbs = ["drinks", "eats", "grows", "laughs", "thinks",
-        "runs", "sleeps", "talks", "walks", "writes"]
+                     "runs", "sleeps", "talks", "walks", "writes"]
 
     for _ in range(4):
         verb = get_verb(1, 'present')
@@ -88,7 +88,7 @@ def test_get_verb():
 
     # 3. Test present and plural
     plural_verbs = ["drink", "eat", "grow", "laugh", "think",
-        "run", "sleep", "talk", "walk", "write"]
+                    "run", "sleep", "talk", "walk", "write"]
 
     for _ in range(4):
         verb = get_verb(2, 'present')
@@ -97,8 +97,8 @@ def test_get_verb():
 
     # 4. Test future verbs
     future_verbs = ["will drink", "will eat", "will grow", "will laugh",
-        "will think", "will run", "will sleep", "will talk",
-        "will walk", "will write"]
+                    "will think", "will run", "will sleep", "will talk",
+                    "will walk", "will write"]
 
     for _ in range(4):
         verb = get_verb(1, 'future')
@@ -109,11 +109,11 @@ def test_get_verb():
 def test_get_prepositional():
     # 1. Since there are no parameters, so only one test is necessary
     prepositions = ["about", "above", "across", "after", "along",
-        "around", "at", "before", "behind", "below",
-        "beyond", "by", "despite", "except", "for",
-        "from", "in", "into", "near", "of",
-        "off", "on", "onto", "out", "over",
-        "past", "to", "under", "with", "without"]
+                    "around", "at", "before", "behind", "below",
+                    "beyond", "by", "despite", "except", "for",
+                    "from", "in", "into", "near", "of",
+                    "off", "on", "onto", "out", "over",
+                    "past", "to", "under", "with", "without"]
 
     for _ in range(4):
         preposition = get_preposition()
@@ -132,7 +132,7 @@ def test_get_prepositional_phrase():
 
     # 2. Plurals
     for _ in range(4):
-        preposition =  get_prepositional_phrase(2)
+        preposition = get_prepositional_phrase(2)
 
     # Since the returned value should a sentence with 3 words
     # There should be two empty strings to separate the words

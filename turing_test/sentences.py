@@ -50,10 +50,10 @@ def get_noun(quantity):
     """
     if quantity == 1:
         words = ["bird", "boy", "car", "cat", "child",
-        "dog", "girl", "man", "rabbit", "woman"]
+                 "dog", "girl", "man", "rabbit", "woman"]
     else:
         words = ["birds", "boys", "cars", "cats", "children",
-        "dogs", "girls", "men", "rabbits", "women"]
+                 "dogs", "girls", "men", "rabbits", "women"]
 
     word = choice(words)
     return word
@@ -65,12 +65,13 @@ def get_adverb():
     "gladly", "gently", "quietly", "safely", "truthfully", "warmly", 
     "wildly", "carefully", "wisely", "hard", "fast", "straight", "well",
     "angrily", "boldly", "daringly"
-    
+
     Return: A randomly chosen adverb
     """
     adverbs = ["gladly", "gently", "quietly", "safely", "truthfully",
-    "warmly", "wildly", "carefully", "wisely", "hard", "fast", "straight",
-    "well", "angrily", "boldly", "daringly"]
+               "warmly", "wildly", "carefully", "wisely", "hard", "fast",
+               "straight", "well", "angrily", "boldly", "daringly"]
+
     adverb = choice(adverbs)
     return adverb
 
@@ -103,18 +104,18 @@ def get_verb(quantity, tense):
     """
     if tense.lower() == 'past':
         verbs = ["drank", "ate", "grew", "laughed", "thought",
-        "ran", "slept", "talked", "walked", "wrote"]
+                 "ran", "slept", "talked", "walked", "wrote"]
     elif tense.lower() == 'present' and quantity == 1:
         verbs = ["drinks", "eats", "grows", "laughs", "thinks",
-        "runs", "sleeps", "talks", "walks", "writes"]
+                 "runs", "sleeps", "talks", "walks", "writes"]
     elif tense.lower() == 'present' and quantity != 1:
         verbs = ["drink", "eat", "grow", "laugh", "think",
-        "run", "sleep", "talk", "walk", "write"]
-    elif tense.lower() == 'future':
+                 "run", "sleep", "talk", "walk", "write"]
+    else:
         verbs = ["will drink", "will eat", "will grow", "will laugh",
-        "will think", "will run", "will sleep", "will talk",
-        "will walk", "will write"]
-    
+                 "will think", "will run", "will sleep", "will talk",
+                 "will walk", "will write"]
+
     verb = choice(verbs)
     return verb
 
@@ -132,11 +133,12 @@ def get_preposition():
     Return: a randomly chosen preposition.
     """
     prepositions = ["about", "above", "across", "after", "along",
-        "around", "at", "before", "behind", "below",
-        "beyond", "by", "despite", "except", "for",
-        "from", "in", "into", "near", "of",
-        "off", "on", "onto", "out", "over",
-        "past", "to", "under", "with", "without"]
+                    "around", "at", "before", "behind", "below",
+                    "beyond", "by", "despite", "except", "for",
+                    "from", "in", "into", "near", "of",
+                    "off", "on", "onto", "out", "over",
+                    "past", "to", "under", "with", "without"]
+
     preposition = choice(prepositions)
     return preposition
 
@@ -154,12 +156,12 @@ def get_prepositional_phrase(quantity):
     """
     if quantity == 1:
         prepositional_phrase = f"{get_preposition()}" \
-                             + f" {get_determiner(1)}" \
-                             + f" {get_noun(1)}"
+            + f" {get_determiner(1)}" \
+            + f" {get_noun(1)}"
     else:
         prepositional_phrase = f'{get_preposition()}' \
-                             + f' {get_determiner(2)}' \
-                             + f' {get_noun(2)}'
+            + f' {get_determiner(2)}' \
+            + f' {get_noun(2)}'
 
     return prepositional_phrase
 
@@ -167,21 +169,19 @@ def get_prepositional_phrase(quantity):
 def main():
     for i in range(2):
         # Past Tense
-        print(f"{get_determiner(i).capitalize()} {get_noun(i)}",
-            + f" {get_adverb()} {get_verb(i, 'past')}",
-            + f"{get_prepositional_phrase(i)}.")
+        print(f"{get_determiner(i).capitalize()} {get_noun(i)} {get_adverb()}",
+              f"{get_verb(i, 'past')} {get_prepositional_phrase(i)}.")
 
     for i in range(2):
         # Present Tense
-        print(f"{get_determiner(i).capitalize()} {get_noun(i)}",
-            + f" {get_adverb()} {get_verb(i, 'present')}",
-            + f"{get_prepositional_phrase(i)}.")
+        print(f"{get_determiner(i).capitalize()} {get_noun(i)} {get_adverb()}",
+              f"{get_verb(i, 'present')} {get_prepositional_phrase(i)}.")
 
     for i in range(2):
         # Future Tense
-        print(f"{get_determiner(i).capitalize()} {get_noun(i)}",
-            + f" {get_adverb()} {get_verb(i, 'future')}",
-            + f"{get_prepositional_phrase(i)}.")
+        print(f"{get_determiner(i).capitalize()} {get_noun(i)} {get_adverb()}",
+              f"{get_verb(i, 'future')} {get_prepositional_phrase(i)}.")
+
 
 # If this file is executed like this:
 # > python program.py

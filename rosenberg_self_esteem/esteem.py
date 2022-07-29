@@ -14,25 +14,25 @@ def print_questions():
     """
     Displays and asks the users the questions from the
     Rosenberg Self-Esteem questioner
-    
-    Parameters:
 
-    return: 
+    Parameters: None
+
+    return: None
     """
     questions = ["I feel that I am a person of worth,"
-        + " at least on an equal plane with others",
-        "I feel that I have a number of good qualities",
-        "All in all, I am inclined to feel that I am a failure",
-        "I am able to do things as well as most other people",
-        "I feel I do not have much to be proud of",
-        "I take a positive attitude toward myself",
-        "On the whole, I am satisfied with myself",
-        "I wish I could have more respect for myself",
-        "I certainly feel useless at times",
-        "At times I think I am no good at all"]
-    
+                 + " at least on an equal plane with others",
+                 "I feel that I have a number of good qualities",
+                 "All in all, I am inclined to feel that I am a failure",
+                 "I am able to do things as well as most other people",
+                 "I feel I do not have much to be proud of",
+                 "I take a positive attitude toward myself",
+                 "On the whole, I am satisfied with myself",
+                 "I wish I could have more respect for myself",
+                 "I certainly feel useless at times",
+                 "At times I think I am no good at all"]
+
     answers = []
-    
+
     for i in range(10):
         print(f'{i + 1}. {questions[i]}.')
         answer = input('Enter A, a, D or d: ')
@@ -74,7 +74,7 @@ def compute_total(answer):
                 points += 0
     return points
 
-     
+
 def main():
     score = print_questions()
     print()
