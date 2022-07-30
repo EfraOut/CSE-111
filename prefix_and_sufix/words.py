@@ -8,6 +8,7 @@ def prefix(string1, string2):
     Parameters
         string1: a string of text
         string2: another string of text
+
     Return: a string
     """
     # Convert both strings to lower case.
@@ -26,7 +27,7 @@ def prefix(string1, string2):
         i += 1
 
     # Extract a substring from string1 and return it.
-    pre = string1[0 : i]
+    pre = string1[0:i]
     return pre
 
 

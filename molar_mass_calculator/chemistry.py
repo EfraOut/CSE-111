@@ -33,11 +33,11 @@ def parse_formula(formula, periodic_table_dict):
     """
     if not isinstance(formula, str):
         raise TypeError("wrong data type for formula; "
-            f"formula is a {type(formula)} but must be a string")
+                        f"formula is a {type(formula)} but must be a string")
     if not isinstance(periodic_table_dict, dict):
         raise TypeError("wrong data type for periodic_table_dict; "
-            f"periodic_table_dict is a {type(periodic_table_dict)} "
-            "but must be a dictionary")
+                        f"periodic_table_dict is a {type(periodic_table_dict)} "
+                        "but must be a dictionary")
 
     def parse_quant(formula, index):
         quant = 1

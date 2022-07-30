@@ -1,6 +1,6 @@
 """Verify that the prefix and suffix functions work correctly."""
 
-from words import prefix, suffix
+from words import *
 import pytest
 
 
@@ -18,6 +18,20 @@ def test_prefix():
     assert prefix("jump", "joyous") == "j"
     assert prefix("unwise", "ungrateful") == "un"
     assert prefix("Disable", "dIstasteful") == "dis"
+
+
+def test_suffix():
+    """Verify that the suffix function works correctly.
+    Parameters: none
+    Return: nothing
+    """
+    assert suffix("", "") == ""
+    assert suffix("", "correct") == ""
+    assert suffix("clear", "") == ""
+    assert suffix("happy", "funny") == "y"
+    assert suffix("bed", "led") == "ed"
+    assert suffix("television", "plain") == "n"
+    assert suffix("distasteful", "ungrateful") == "teful"
 
 
 # Call the main function that is part of pytest so that
